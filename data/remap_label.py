@@ -18,6 +18,7 @@ def main():
     for split in ("train", "valid", "test"):
         folder = Path(args.root) / split / "labels"
         if not folder.exists():
+            print(f"{split}: 폴더 없음 -> {folder}")
             continue
         counts = Counter()
         for txt in folder.glob("*.txt"):
