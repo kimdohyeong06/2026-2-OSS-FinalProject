@@ -4,7 +4,7 @@ from pathlib import Path
 
 from ultralytics import YOLO
 
-DEFAULT_DATA = "CV-CBI-MINING SAFETY.v3i.yolov12/data.yaml"
+DEFAULT_DATA = "CV-CBI-MINING SAFETY.v1i.yolov12"
 
 
 def main():
@@ -17,6 +17,8 @@ def main():
     ap.add_argument("--fraction", type=float, default=1.0,
                     help="사용할 데이터 비율 (시험용은 0.1)")
     ap.add_argument("--name", default="helmet_v1")
+    ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--patience", type=int, default=10)
     args = ap.parse_args()
 
     data = Path(args.data).resolve()
@@ -31,7 +33,8 @@ def main():
         imgsz=args.imgsz,
         batch=args.batch,
         fraction=args.fraction,
-        workers=0,  # Windows 데이터 로딩 에러 방지
+        workers=args.workers,
+        patience=args.patience,  # Windows 데이터 로딩 에러 방지
         project="runs",
         name=args.name,
     )

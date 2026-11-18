@@ -5,3 +5,4 @@ CV-CBI-MINING*/
 datasets/
 runs/
 *.pt
+!models/*.pt
