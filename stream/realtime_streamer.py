@@ -1,11 +1,11 @@
 import cv2
 import time
 from ultralytics import YOLO
-from stream.stream import RealtimeStreamer  # 작성하신 stream_2.py에서 클래스 불러오기[cite: 10]
+from stream import RealtimeStreamer  # 작성하신 stream_2.py에서 클래스 불러오기[cite: 10]
 
 # 1. train.py로 학습 완료된 최적 가중치(best.pt) 로드
 # 기본 설정 기준 저장 경로: runs/detect/helmet_v1/weights/best.pt
-MODEL_PATH = "runs/detect/helmet_v1/weights/best.pt"
+MODEL_PATH = "models/helmet_yolo26.pt"
 model = YOLO(MODEL_PATH)
 
 # 2. 스트리머 객체 생성 및 카메라 시작[cite: 10]

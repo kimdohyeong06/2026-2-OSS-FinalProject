@@ -1,0 +1,1 @@
+test_image를 돌리기 위해서는 stream 폴더 안에 images 파일을 만든 후 그곳에 이미지를 저장해야 함

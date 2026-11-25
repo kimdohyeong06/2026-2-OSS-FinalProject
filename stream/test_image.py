@@ -62,7 +62,7 @@ def detect_ppe_on_image(model, img_path):
 
 if __name__ == "__main__":
     # 1. 학습 완료 후 받을 모델 경로 & 테스트할 이미지 폴더 경로[cite: 4, 5]
-    MODEL_PATH = "runs/detect/helmet_v1/weights/best.pt"
+    MODEL_PATH = "models/helmet_yolo26.pt"
     IMAGE_DIR = Path("stream/images")
 
     model = YOLO(MODEL_PATH)
